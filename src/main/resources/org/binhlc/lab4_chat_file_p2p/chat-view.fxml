@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black; -fx-min-height: 680; -fx-min-width: 600;" styleClass="chatbodybg" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane layoutY="52.0" minHeight="667.0" prefHeight="667.0" prefWidth="600.0" style="-fx-min-height: 680; -fx-background-color: rgba(44, 62, 80,0.4); -fx-min-width: 630;">
+            <children>
+                <TextArea fx:id="messageSendBox" layoutX="14.0" layoutY="554.0" prefHeight="50.0" prefWidth="364.0" promptText="Nhập tin nhắn....." style="-fx-border-width: 0;">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font></TextArea>
+                <Button fx:id="messageSendButton" layoutX="394.0" layoutY="556.0" pickOnBounds="true" prefHeight="39.0" prefWidth="74.0" style="-fx-cursor: hand;" text="Gửi">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font></Button>
+                <Button fx:id="fileAttachButton" layoutX="491.0" layoutY="553.0" pickOnBounds="true" prefHeight="39.0" prefWidth="74.0" style="-fx-cursor: hand;" text="File">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font></Button>
+<!--                <ColorPicker fx:id="themeChangeButton" accessibleRole="IMAGE_VIEW" layoutX="479.0" layoutY="560.0" prefHeight="27.0" prefWidth="30.0" style="-fx-cursor: hand;" >-->
+<!--                    <styleClass>-->
+<!--                        <String fx:value="color-picker" />-->
+<!--                        <String fx:value="color-picker-label" />-->
+<!--                    </styleClass>-->
+<!--                </ColorPicker>-->
+<!--                <Button fx:id="saveMessageButton" layoutX="520.0" layoutY="560.0" pickOnBounds="true" style="-fx-cursor: hand;">-->
+<!--                    Save-->
+<!--                </Button>-->
+                <ScrollPane fx:id="messageList" layoutX="-3.0" layoutY="14.0" prefHeight="523.0" prefWidth="600.0" style="-fx-hbar-policy: never; -fx-vbar-policy: never;" styleClass="viewport" />
+<!--                <Button fx:id="loadMessageIcon" layoutX="559.0" layoutY="561.0" pickOnBounds="true" style="-fx-cursor: hand;">-->
+<!--                    Icon-->
+<!--                </Button>-->
+            </children>
+        </Pane>
+        <Pane layoutX="2.0" layoutY="-4.0" minWidth="594.0" prefHeight="69.0" prefWidth="630.0" style="-fx-background-color: green; -fx-min-width: 630;">
+            <children>
+                <Label fx:id="listeningAtLabel" layoutX="23.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+                <Label fx:id="chatUserNameLabel" layoutX="266.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+                <Label fx:id="connectedToLabel" layoutX="424.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+            </children>
+        </Pane>
+    </children>
+</Pane>
