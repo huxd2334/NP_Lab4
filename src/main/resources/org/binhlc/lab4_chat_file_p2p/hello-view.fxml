@@ -23,11 +23,6 @@
                     <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
                             <children>
-<!--                                <ImageView fitHeight="41.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">-->
-<!--                                    <image>-->
-<!--                                        <Image url="@/org/binhlc/lab4_chat_file_p2p/images/userIcon.png" />-->
-<!--                                    </image>-->
-<!--                                </ImageView>-->
                                 <TextField fx:id="userNameField" minHeight="34.0" prefHeight="41.0" prefWidth="337.0" promptText="User Name" style="-fx-min-height: 35;" />
                             </children>
                         </HBox>
@@ -44,11 +39,6 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
                             <children>
-<!--                                <ImageView fitHeight="41.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">-->
-<!--                                    <image>-->
-<!--                                        <Image url="@/org/binhlc/lab4_chat_file_p2p/images/ipIcon.png" />-->
-<!--                                    </image>-->
-<!--                                </ImageView>-->
                                 <TextField fx:id="ipAddrField" minHeight="34.0" prefHeight="41.0" prefWidth="330.0" promptText="IP Address" style="-fx-min-height: 35;" />
                             </children>
                         </HBox>
@@ -65,11 +55,6 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
                             <children>
-<!--                                <ImageView fitHeight="40.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">-->
-<!--                                    <image>-->
-<!--                                        <Image url="@/org/binhlc/lab4_chat_file_p2p/images/portIcon.png" />-->
-<!--                                    </image>-->
-<!--                                </ImageView>-->
                                 <TextField fx:id="portField" prefHeight="41.0" prefWidth="334.0" promptText="Port Number To Connect" style="-fx-min-height: 35;" />
                             </children>
                         </HBox>
@@ -86,11 +71,6 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
                             <children>
-<!--                                <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">-->
-<!--                                    <image>-->
-<!--                                        <Image url="@/org/binhlc/lab4_chat_file_p2p/images/portIcon2.png" />-->
-<!--                                    </image>-->
-<!--                                </ImageView>-->
                                 <TextField fx:id="clientPortField" prefHeight="41.0" prefWidth="330.0" promptText="Port Number To Listen" style="-fx-min-height: 35;" />
                             </children>
                         </HBox>
@@ -107,12 +87,12 @@
                         </Label>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 50; -fx-padding: 10;">
                             <children>
-                                <Button fx:id="submitButton" mnemonicParsing="false" style="-fx-background-color: rgb(39, 174, 96); -fx-text-fill: #ffffff; -fx-border-radius: 10;" text="Submit">
+                                <Button fx:id="submitButton" mnemonicParsing="false" style="-fx-background-color: rgb(39, 174, 96); -fx-text-fill: #ffffff; -fx-border-radius: 10;" text="Kết nối">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="resetButton" mnemonicParsing="false" style="-fx-background-color: rgb(231, 76, 60); -fx-text-fill: #ffffff;" text="Reset All Field">
+                                <Button fx:id="resetButton" mnemonicParsing="false" style="-fx-background-color: rgb(231, 76, 60); -fx-text-fill: #ffffff;" text="Reset">
                                     <font>
                                         <Font size="16.0" />
                                     </font></Button>

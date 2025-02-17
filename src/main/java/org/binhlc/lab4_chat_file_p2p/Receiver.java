@@ -113,12 +113,12 @@ public class Receiver extends Thread {
                                 Label messageLabel = new Label(fileName);
                                 //messageLabel.setPadding(new Insets(10,10,10,10));
                                 messageLabel.setFont(new Font(15));
-                                messageLabel.setStyle("-fx-background-color:#e67e22;-fx-padding:10;-fx-background-radius:8;");
+                                messageLabel.setStyle("-fx-background-color:#ffa500;-fx-padding:10;-fx-background-radius:8;");
                                 messageLabel.setTextFill(Color.WHITE);
                                 messageLabel.setUnderline(true);
                                 Label senderLabel = new Label(sender);
                                 senderLabel.setFont(new Font(10));
-                                senderLabel.setStyle("-fx-padding:2;-fx-background-color:#2c3e50;");
+                                senderLabel.setStyle("-fx-padding:2;-fx-background-color:black;");
                                 senderLabel.setTextFill(Color.WHITE);
                                 senderLabel.setVisible(false);
                                 VBox messageInfo = new VBox(messageLabel, senderLabel);
@@ -187,8 +187,8 @@ public class Receiver extends Thread {
                             BorderPane gotBorderPane = (BorderPane) i;
                             VBox gotVBox = (VBox) gotBorderPane.getChildren().get(0);
                             Label sederLabel = (Label) gotVBox.getChildren().get(1);
-                            if (!sederLabel.getText().equals("You"))
-                                gotVBox.getChildren().get(0).setStyle("-fx-background-color: " + hexColor + ";-fx-padding:10;-fx-background-radius:8;");
+                            if (!sederLabel.getText().equals("Bạn"))
+                                gotVBox.getChildren().get(0).setStyle("-fx-background-color:" + hexColor + ";-fx-padding:10;-fx-background-radius:8;");
                         }
                         //messageListView.setStyle("-fx-background: "+hexColor+";-fx-border-color: "+hexColor+";");
                         //root.setStyle("-fx-background: "+hexColor+";");
@@ -222,11 +222,11 @@ public class Receiver extends Thread {
                                 ChatController.allMessages.add(sender + " : " + finalMessage);
                                 Label senderLabel = new Label(sender);
                                 senderLabel.setFont(new Font(10));
-                                senderLabel.setStyle("-fx-padding:2;-fx-background-color:#2c3e50;");
+                                senderLabel.setStyle("-fx-padding:2;-fx-background-color:black;");
                                 senderLabel.setTextFill(Color.WHITE);
                                 senderLabel.setVisible(false);
                                 messageLabel.setFont(new Font(15));
-                                messageLabel.setStyle("-fx-background-color:#e67e22;-fx-padding:10;-fx-background-radius:8;");
+                                messageLabel.setStyle("-fx-background-color:orange;-fx-padding:10;-fx-background-radius:8;");
                                 messageLabel.setTextFill(Color.WHITE);
                                 messageLabel.setCursor(Cursor.HAND);
                                 messageLabel.setOnMouseEntered(new EventHandler<Event>() {
@@ -274,9 +274,9 @@ public class Receiver extends Thread {
         bufferedOutputStream.flush();
         bufferedOutputStream.close();
 
-        Label infoMessage = new Label("File is successfully saved as " + filePath);
+        Label infoMessage = new Label("Đã lưu file tại " + filePath);
         infoMessage.setStyle("-fx-font-size:15;-fx-padding:10;");
-        Label openLink = new Label("Nhấn vào đây để mở file");
+        Label openLink = new Label("Nhấn vào đây để xem file");
         openLink.setCursor(Cursor.HAND);
         openLink.setStyle("-fx-font-size:15;-fx-padding:10;-fx-text-fill:#3498db;");
         openLink.setOnMouseClicked(new EventHandler<Event>() {

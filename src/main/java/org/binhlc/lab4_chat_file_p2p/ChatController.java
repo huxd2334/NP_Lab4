@@ -29,7 +29,7 @@ public class ChatController extends Thread {
     private TextField ipAddrField, portField, clientPortField, userNameField;
     private String ipAddressToConnect, portToConnect, portToListen, userName;
     @FXML
-    private Label portNoToListenEmptyMessage, portNoEmptyMessage, ipaddrEmptyMessage, userNameEmptyMessage, chatUserNameLabel;
+    private Label portNoToListenEmptyMessage, portNoEmptyMessage, ipaddrEmptyMessage, userNameEmptyMessage, userLabel, partnerLabel;
     @FXML
     private TextArea messageSendBox;
     private boolean isValid;
@@ -39,7 +39,6 @@ public class ChatController extends Thread {
     @FXML
     private Button messageSendButton, fileAttachButton;
     @FXML
-    private ColorPicker themeChangeButton;
     private FileChooser fileChooser;
     private Stage stage;
     private File file;
@@ -64,6 +63,7 @@ public class ChatController extends Thread {
         message = (Label) root.lookup("#message");
         userNameField = (TextField) root.lookup("#userNameField");
         userNameEmptyMessage = (Label) root.lookup("#userNameEmptyMessage");
+        partnerLabel = (Label) root.lookup("#partnerLabel");
         System.out.println(portField);
         ipaddrEmptyMessage.setVisible(false);
         portNoEmptyMessage.setVisible(false);
@@ -78,7 +78,6 @@ public class ChatController extends Thread {
     public void run() {
         System.out.println(Thread.currentThread().getName() + " started....");
         while (running && (!messageReceiver.isConnected() || messageReceiver.getReceiverPort() != -1 || messageSender.getSenderPort() != -1)) {
-            System.out.println("Cannot connect. Please check the connection information.");
             try {
                 Thread.sleep(1000);
                 if (messageReceiver.isConnected() && messageReceiver.getReceiverPort() != -1 && messageSender.getSenderPort() != -1) {
@@ -127,8 +126,8 @@ public class ChatController extends Thread {
         fileAttachButton = (Button) root.lookup("#fileAttachButton");
         scrollPane = (ScrollPane) root.lookup("#messageList");
         scrollPane.setStyle("-fx-background:transparent;");
-        chatUserNameLabel = (Label) root.lookup("#chatUserNameLabel");
-        chatUserNameLabel.setText("Chào " + userName);
+        userLabel = (Label) root.lookup("#chatUserNameLabel");
+        userLabel.setText( userName +"(Tôi)");
         messageSendButton.setOnMouseClicked(new EventHandler<Event>() {
             @Override
             public void handle(Event arg0) {
@@ -197,7 +196,27 @@ public class ChatController extends Thread {
             @Override
             public void handle(Event event) {
                 try {
-                    System.out.println("Reset");
+                    ipAddrField.setText("");
+                    portField.setText("");
+                    clientPortField.setText("");
+                    userNameField.setText("");
+                    ipaddrEmptyMessage.setVisible(false);
+                    portNoEmptyMessage.setVisible(false);
+                    portNoToListenEmptyMessage.setVisible(false);
+                    userNameEmptyMessage.setVisible(false);
+                    submitButton.setOpacity(1.0);
+                    submitButton.setText("Kết nối");
+                    // Stop the connection checker thread
+                    if (connectionChecker != null && connectionChecker.isAlive()) {
+                        running = false;
+                        connectionChecker.interrupt();
+                        connectionChecker.join();
+                    }
+                    messageReceiver = null;
+                    messageSender = null;
+                    connectionChecker = null;
+
+//
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -154,11 +154,11 @@ public class Sender extends Thread {
 
                 Label messageLabel = new Label(fileName + " is sent");
                 messageLabel.setFont(new Font(15));
-                messageLabel.setStyle("-fx-background-color:#2ecc71;-fx-padding:10;-fx-background-radius:8;");
+                messageLabel.setStyle("-fx-background-color:green;-fx-padding:10;-fx-background-radius:8;");
                 messageLabel.setTextFill(Color.WHITE);
-                Label senderLabel = new Label("You");
+                Label senderLabel = new Label("Bạn");
                 senderLabel.setFont(new Font(10));
-                senderLabel.setStyle("-fx-padding:2;-fx-background-color:#2c3e50;");
+                senderLabel.setStyle("-fx-padding:2;-fx-background-color:red");
                 senderLabel.setTextFill(Color.WHITE);
                 senderLabel.setVisible(false);
 
